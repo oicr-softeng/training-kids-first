@@ -1,0 +1,35 @@
+version: '3'
+services:
+  kidsfirst-preview:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+     - VIRTUAL_HOST=kf-website-preview.kidsfirstdrc.org
+    ports:
+     - "4567:4567"
+    volumes:
+     - .:/usr/src/app
+    command: bash -c 'cd /usr/src/app/_preview; sudo bundle update; ruby index.rb -o 0.0.0.0 -p 4567'
+    image: jekyll:docker
+    container_name: kidsfirst-preview
+  kidsfirst:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+     - VIRTUAL_HOST=kidsfirstdrc.org
+     - CERT_NAME=kidsfirstdrc.org
+    ports:
+     - "4000"
+    volumes:
+     - .:/usr/src/app
+    command: bash -c 'cd /usr/src/app; jekyll serve -d _site --watch --host=0.0.0.0 --port 4000'
+    image: jekyll:docker
+    container_name: kidsfirst
+    external_links:
+     - kidsfirst-api:kf-website-api.kidsfirstdrc.org
+networks:
+  default:
+    external:
+      name: nginx-proxy

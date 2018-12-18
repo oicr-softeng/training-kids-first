@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: 
+Disallow: /user
+Disallow: /_api/
+Disallow: /*.yml
+Disallow: /*.sh

@@ -1,0 +1,28 @@
+.contact-form .survey-question div.fields {
+    width: 100%;
+    margin: 0px 0px;
+}
+
+.contact-form .survey-question .fields .wfui-type-input-field {
+    margin: 10px 0;
+}
+
+.contact-form .survey-question .fields .wfui-type-listbox {
+    margin: 10px 0;
+}
+
+.contact-form .survey-question .fields .wfui-type-textarea {
+    margin: 10px 0;
+}
+
+.contact-form .wfui-form-item input[type=email] {
+    margin-bottom: 0px
+}
+
+.contact-form .survey-end-container {
+    padding-top: 0px;
+}
+
+.contact-form #oicr-forms-form .survey-end-container .btn.btn-primary {
+    margin-top: 15px;
+}

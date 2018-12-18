@@ -1,0 +1,13 @@
+{
+  "name": "my-jekyll-site-name",
+  "version": "1.0.0",
+  "description": "",
+  "author": "OICR",
+  "license": "MIT",
+  "scripts": {
+    "init": "./node_modules/.bin/webdev-baseline-init",
+    "update": "./node_modules/.bin/webdev-baseline-update"
+  },
+  "dependencies": {
+  }
+}

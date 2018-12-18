@@ -1,0 +1,307 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+######################################################################
+# Site Configuration Config
+######################################################################
+
+# Global Site Title
+title: KidsFirst
+
+description: > # this means to ignore newlines until "baseurl:"
+  The Kids First Data Resource Center (DRC) is bringing together the leading experts in rare-disease research, along with cutting-edge technologies, to help scientists understand how to more effectively treat and target childhood diseases.
+# Contact Information
+email: support@kidsfirstdrc.org
+
+# the subpath of your site, e.g. /blog
+baseurl: ""
+
+# Default permalink for posts
+permalink: /node/:year-:month-:day-:title.html
+
+# Post excerpt tag https://jekyllrb.com/docs/posts/#post-excerpts
+excerpt_separator: "<!--more-->"
+
+######################################################################
+# Collections setting. https://jekyllrb.com/docs/collections/
+######################################################################
+
+collections:
+  _modules:
+    output: true
+  _tags:
+    output: false
+  _partners:
+    output: true
+  _support:
+    output: true
+  _news:
+    output: true
+    permalink: /news/:name/
+  # Default collections
+  _images:
+    output: true
+  _pages:
+    output: true
+  _privateFiles:
+    output: false
+  _files:
+    output: false
+  _videos:
+    output: false
+  _weblinks:
+    output: true
+
+defaults:
+
+  ###### Site specific collection types ##############################
+
+  # Partner
+  - scope:
+      path: ""
+      type: _partners
+    values:
+      title: ""
+      permalink: '/partners/'
+      published: false
+      isPublic_b: true
+      type_txt: ""
+      name_txt: ""
+      link_txt: ""
+      logoRef_txt: ""
+      description_txt: ""
+      readMoreButton_txt: "Read More"
+    required: []
+    validate: {}
+    labels:
+      type_txt: "Type"
+      name_txt: "Name"
+      link_txt: "Link"
+      logoRef_txt: "Logo Reference"
+      description_txt: "Description"
+      readMoreButton_txt: "Read More Text"
+    subs: []
+  # Support
+  - scope:
+      path: ""
+      type: _support
+    values:
+      layout: support_detail
+      permalink: '/support/:name/'
+      bannerSentence_txt: Support
+      pageType_txt: support
+    required: []
+    validate: {}
+    labels:
+      bannerSentence_txt: "Banner Sentence"
+      pageType_txt: "Page Type"
+    subs: []
+  # Weblinks
+  - scope:
+      path: ""
+      type: _weblinks
+    values:
+      layout: weblinks
+      permalink: '/weblinks/:name/'
+      published: true
+
+  # Images
+  - scope:
+      path: ""
+      type: _images
+    values:
+      layout: images
+      permalink: '/images/:name/'
+      published: true
+
+  - scope:
+      path: ''
+      type: _modules
+    values:
+      title: ''
+      date_tdt: '2018-07-11T19:36:04.633Z'
+      author: ''
+      layout: default
+      permalink: '/_modules/:name/'
+      published: true
+      isPublic_b: false
+    required: []
+    validate: {}
+    labels:
+      title: Title
+      date_tdt: Date
+      author: Author
+      layout: Layout
+      permalink: Permanent Link
+      published: Published
+      isPublic_b: Public
+
+
+
+
+
+  - scope:
+      path: ''
+      type: _news
+    values:
+      title: ''
+      date_tdt: '2018-06-20T18:09:52.902Z'
+      author: ''
+      layout: news
+      permalink: '/news/:name/'
+      published: true
+      isPublic_b: true
+      body: ''
+      releaseDate_tdt: '2000-01-01T12:00:00.000Z'
+      category_txt: ''
+      teaser_list:
+        - thumbnail_txt: ''
+          headline_txt: ''
+          button_txt: ''
+          link_txt: ''
+    required: []
+    validate: {}
+    labels:
+      title: Title
+      date_tdt: Date
+      author: Author
+      layout: Layout
+      permalink: Permanent Link
+      published: Published
+      isPublic_b: Public
+      body: Body
+      releaseDate_tdt: Release Date
+      category_txt: Category
+      teaser_list: Teaser List
+      teaser_list.thumbnail_txt: Thumbnail
+      teaser_list.headline_txt: Headline
+      teaser_list.button_txt: Button
+      teaser_list.link_txt: Link
+    subs:
+      - key: Foundation
+        values:
+          title: ''
+          date_tdt: '2018-06-20T18:09:52.902Z'
+          author: ''
+          layout: news
+          permalink: '/news/:name/'
+          published: true
+          isPublic_b: true
+          body: ''
+          releaseDate_tdt: '2000-01-01T12:00:00.000Z'
+          category_txt: spotlight
+          teaser_list:
+            - thumbnail_txt: ''
+              headline_txt: ''
+              button_txt: ''
+              link_txt: ''
+              affiliation_txt: ''
+              focus_txt: ''
+          spotlightType_txt: foundation
+        required:
+          - title
+          - date_tdt
+        validate: {}
+        labels:
+          title: Title
+          date_tdt: Date
+          author: Author
+          layout: Layout
+          permalink: Permanent Link
+          published: Published
+          isPublic_b: Public
+          body: Body
+          releaseDate_tdt: Release Date
+          category_txt: Category
+          teaser_list: Teaser List
+          teaser_list.thumbnail_txt: Thumbnail
+          teaser_list.headline_txt: Headline
+          teaser_list.button_txt: Button
+          teaser_list.link_txt: Link
+          spotlightType_txt: Spotlight Type
+          teaser_list.affiliation_txt: Affiliation
+          teaser_list.focus_txt: Research Focus
+      - key: Investigator
+        values:
+          title: ''
+          date_tdt: '2018-06-20T18:09:52.902Z'
+          author: ''
+          layout: news
+          permalink: '/news/:name/'
+          published: true
+          isPublic_b: true
+          body: ''
+          releaseDate_tdt: '2000-01-01T12:00:00.000Z'
+          category_txt: spotlight
+          teaser_list:
+            - thumbnail_txt: ''
+              headline_txt: ''
+              button_txt: ''
+              link_txt: ''
+              affiliation_txt: ''
+              focus_txt: ''
+          spotlightType_txt: investigator
+        required:
+          - title
+          - date_tdt
+        validate: {}
+        labels:
+          title: Title
+          date_tdt: Date
+          author: Author
+          layout: Layout
+          permalink: Permanent Link
+          published: Published
+          isPublic_b: Public
+          body: Body
+          releaseDate_tdt: Release Date
+          category_txt: Category
+          teaser_list: Teaser List
+          teaser_list.thumbnail_txt: Thumbnail
+          teaser_list.headline_txt: Headline
+          teaser_list.button_txt: Button
+          teaser_list.link_txt: Link
+          spotlightType_txt: Spotlight Type
+          teaser_list.affiliation_txt: Affiliation
+          teaser_list.focus_txt: Research Focus
+
+
+######################################################################
+# Jekyll Environment Config
+######################################################################
+
+# ImageFile Path
+imagePath: /assets/site/images/
+
+# Build settings
+markdown: kramdown
+# Jekyll plugins ( also requires to add list in Gemfile )
+plugins:
+
+# Exclude these files when the site is generated.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - webpack.config.js
+  - .eslint
+  - package.json
+  - npm-debug.log
+  - vendor
+  - docker-compose.yml
+  - start.sh
+  - start-build.sh
+  - start-preview.sh
